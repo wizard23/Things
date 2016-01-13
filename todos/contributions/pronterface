@@ -1,0 +1,6 @@
+add timer that starts when set temperature is clicked,
+
+test for heat and print status,
+
+if the printer is not printing 1-5 minutes after the heat level has been reached:
+  alert the user, beep every 5 seconds and start another timer that disables heating after one minute.
