@@ -1,22 +1,24 @@
-w = 20;
-l = 17;
-h = 2;
+w = 20 + 4;
+l = 17 + 2;
+h = 2 + 0.5;
 
 cutoutW = 2;
 cutoutH = 10;
 cutoutDelta = 1.9;
 
-knobsR = 0.75;
+knobsR = 0.95;
 knobsL = 2;
 knobsDelta = 2;
 $fn=32;
+
+// cube([100, 50, 40]);
 
 difference() {
     union() {
         cubeEx([w, l, h]);
         translate([0,l/2-knobsDelta,0])
-        rotate([0, 90, 0]) 
-            cylinder(w+2*knobsL, knobsR, knobsR, center=true);
+            rotate([0, 90, 0]) 
+                cylinder(w+2*knobsL, knobsR, knobsR, center=true);
     }
     translate([w/2-cutoutW/2-cutoutDelta, l/2, 0]) cubeEx([cutoutW, cutoutH*2, h*3]);
     translate([-(w/2-cutoutW/2-cutoutDelta), l/2, 0]) cubeEx([cutoutW, cutoutH*2, h*3]);
